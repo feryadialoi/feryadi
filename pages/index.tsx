@@ -565,7 +565,8 @@ type BlogItemProps = {
 }
 
 const BlogItem: FC<BlogItemProps> = (props) => {
-    const link = `/blogs/${props.title.replaceAll(" ", "+")}`
+    const regex = / /g
+    const link = `/blogs/${props.title.replace(regex, "+")}`
 
     return (
         <div className="w-full px-4 lg:w-1/2 xl:w-1/3">
